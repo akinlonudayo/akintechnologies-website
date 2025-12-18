@@ -28,11 +28,10 @@ body::before {
   width: 100%;
   background: #020617;
   color: #fff;
-  padding: 16px 50px;       /* reduce horizontal padding for small screens */
+  padding: 16px 40px;       /* reduce horizontal padding for small screens */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;          /* allow items to wrap on small screens */
   z-index: 1000;
 }
 
@@ -44,7 +43,6 @@ body::before {
 
 .nav-links {
   display: flex;
-  flex-wrap: wrap;          /* allow links to wrap if needed */
   gap: 16px;                /* smaller gap to fit all links */
 }
 
