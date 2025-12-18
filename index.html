@@ -152,67 +152,168 @@
       </div>
     </div>
   </nav>
+  
+  <!-- Hamburger Menu Script -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    let menuOpen = false;
 
-  <!-- HEADER -->
-  <header>
-    <h1>AkinTechnologies</h1>
-    <p class="tagline">Simply the Best Cloud Solutions</p>
-    <a class="btn" href="#contact">Get a Free Consultation</a>
-  </header>
+    function toggleNav() {
+      menuOpen = !menuOpen;
+      if (menuOpen) {
+        navLinks.style.maxHeight = navLinks.scrollHeight + "px";
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.gap = '10px';
+        const spans = hamburger.querySelectorAll('span');
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        navLinks.style.maxHeight = '0px';
+        const spans = hamburger.querySelectorAll('span');
+        spans[0].style.transform = 'rotate(0) translate(0,0)';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'rotate(0) translate(0,0)';
+      }
+    }
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>Who We Are</h2>
-    <p class="tagline">
-      AkinTechnologies is a cloud and DevOps solutions company helping businesses design,
-      deploy, and secure scalable infrastructure on AWS and Microsoft Azure.
-    </p>
-  </section>
+    function checkScreen() {
+      if (window.innerWidth <= 768) {
+        hamburger.style.display = 'flex';
+        navLinks.style.maxHeight = '0px';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.gap = '10px';
+      } else {
+        hamburger.style.display = 'none';
+        navLinks.style.maxHeight = 'none';
+        navLinks.style.flexDirection = 'row';
+        navLinks.style.gap = '15px';
+      }
+    }
 
-  <!-- SERVICES -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <p class="tagline">Cloud Architecture, DevOps, Security, and Automation.</p>
+    hamburger.addEventListener('click', toggleNav);
+    window.addEventListener('resize', checkScreen);
+    window.addEventListener('load', checkScreen);
+  </script>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Cloud Architecture</h3>
-        <p>AWS & Azure design, scalable and secure deployments.</p>
-      </div>
-      <div class="card">
-        <h3>DevOps & Automation</h3>
-        <p>Terraform, CI/CD pipelines, and infrastructure automation.</p>
-      </div>
-      <div class="card">
-        <h3>Cloud Security</h3>
-        <p>IAM, network security, and best practices.</p>
-      </div>
+</body>
+</html>
+
+<!-- HEADER -->
+<header>
+  <h1>AkinTechnologies</h1>
+  <p class="tagline">Simply the Best Cloud Solutions</p>
+  <a class="btn" href="#contact">Get a Free Consultation</a>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>Who We Are</h2>
+  <p class="tagline">
+    AkinTechnologies is a cloud and DevOps solutions company helping businesses design, deploy,
+    and secure scalable infrastructure on AWS and Microsoft Azure. We focus on automation,
+    security, and reliability so our clients can scale with confidence.
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div style="display:flex;gap:24px;align-items:center;margin-bottom:40px;flex-wrap:wrap;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" style="height:50px;" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Azure" style="height:50px;" />
+  </div>
+
+  <h2>Our Services</h2>
+  <p class="tagline">Cloud Architecture, DevOps, Security, and Automation tailored for your business.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Cloud Architecture & Deployment</h3>
+      <p>AWS and Azure cloud design, serverless architectures, and highly available deployments.</p>
     </div>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section id="portfolio">
-    <h2>Featured Projects</h2>
-    <div class="grid">
-      <div class="card">AWS Serverless Applications</div>
-      <div class="card">Azure Enterprise Architectures</div>
-      <div class="card">Cloud Contact Centers</div>
+    <div class="card">
+      <h3>DevOps & Automation</h3>
+      <p>Infrastructure as Code with Terraform, CI/CD pipelines, and automated deployments.</p>
     </div>
-  </section>
+    <div class="card">
+      <h3>Cloud Security & Compliance</h3>
+      <p>IAM, network security, firewall design, and security best-practice reviews.</p>
+    </div>
+    <div class="card">
+      <h3>Migration & Optimization</h3>
+      <p>Cloud migrations, performance tuning, and cost optimization strategies.</p>
+    </div>
+    <div class="card">
+      <h3>Website Development</h3>
+      <p>Custom website development, design, and deployment services.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p class="tagline">Let’s discuss your cloud journey.</p>
-    <p><strong>Email:</strong> info@akintechnologies.com</p>
-    <p><strong>Location:</strong> Canada</p>
-  </section>
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <p class="tagline" style="max-width:800px;margin-bottom:40px;">
+    Our solutions are built using industry-leading cloud platforms including <strong>AWS</strong> and <strong>Microsoft Azure</strong>, following enterprise architecture and security best practices.
+  </p>
+  <h2>Featured Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>AWS Cloud Contact Center</h3>
+      <p>Serverless Amazon Connect solution with Lambda integrations and secure IAM controls.</p>
+    </div>
+    <div class="card">
+      <h3>AWS Serverless Application</h3>
+      <p>API Gateway, Lambda, DynamoDB, S3, and Glue deployed using Terraform.</p>
+    </div>
+    <div class="card">
+      <h3>Azure 3-Tier Banking Architecture</h3>
+      <p>Enterprise-grade Azure design with VM Scale Sets, Load Balancers, Firewall, and Azure SQL.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 AkinTechnologies</p>
-    <p>Cloud • DevOps • Web Development</p>
-  </footer>
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p class="tagline">Let’s discuss how we can support your cloud journey.</p>
+  <form>
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <textarea rows="4" placeholder="How can we help?" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p style="margin-top:16px;"><strong>Email:</strong> info@akintechnologies.com</p>
+  <p><strong>Location:</strong> Canada</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 AkinTechnologies</p>
+  <p>Cloud • DevOps • Web Development</p>
+</footer>
+
+<!-- NAVBAR TOGGLE & SCROLL SHADOW SCRIPT -->
+<script>
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinksEl = document.getElementById('nav-links');
+  const navbar = document.querySelector('.navbar');
+
+  if (navToggle && navLinksEl) {
+    navToggle.addEventListener('click', () => {
+      navLinksEl.classList.toggle('active');
+    });
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!navbar) return;
+    if (window.scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
 
 </body>
 </html>
