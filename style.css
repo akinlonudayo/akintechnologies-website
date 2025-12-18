@@ -11,7 +11,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("logo-watermark.png"); /* update path if needed */
+  background-image: url("Logo de AkinTechnologies sur fond bleu.png"); /* update path if needed */
   background-repeat: no-repeat;
   background-position: center;
   background-size: 320px;
@@ -21,16 +21,18 @@ body::before {
 }
 
 /* NAVBAR */
+/* NAVBAR - Responsive Fix */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   background: #020617;
   color: #fff;
-  padding: 16px 40px;
+  padding: 16px 20px;       /* reduce horizontal padding for small screens */
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;          /* allow items to wrap on small screens */
   z-index: 1000;
 }
 
@@ -40,23 +42,16 @@ body::before {
   gap: 12px;
 }
 
-.nav-left img {
-  height: 42px;
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;          /* allow links to wrap if needed */
+  gap: 16px;                /* smaller gap to fit all links */
 }
 
 .nav-links a {
   color: #fff;
   text-decoration: none;
-  margin-left: 24px;
-  opacity: 0.9;
-}
-
-.nav-links a:hover {
-  opacity: 1;
-}
-
-.nav-spacer {
-  height: 80px;
+  white-space: nowrap;      /* prevent link text from breaking */
 }
 
 /* HEADER */
