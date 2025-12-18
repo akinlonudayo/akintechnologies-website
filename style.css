@@ -28,7 +28,7 @@ body::before {
   width: 100%;
   background: #020617;
   color: #fff;
-  padding: 16px 20px;       /* reduce horizontal padding for small screens */
+  padding: 16px 50px;       /* reduce horizontal padding for small screens */
   display: flex;
   justify-content: space-between;
   align-items: center;
