@@ -8,79 +8,230 @@
     /* ===================== */
     /*        GENERAL        */
     /* ===================== */
-    body { margin:0; font-family: Arial, Helvetica, sans-serif; color:#1f2937; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f2937;
+      padding-top: 64px; /* space for sticky navbar */
+    }
 
     /* ===================== */
     /*        HEADER         */
     /* ===================== */
-    header { background:#0f172a; color:#fff; padding:80px 20px; text-align:center; animation: fadeIn 0.9s ease-out; }
-    header h1 { font-size:48px; margin-bottom:10px; }
-    header p { font-size:20px; margin-bottom:30px; }
-    .btn { background:#994646; color:#fff; padding:14px 28px; text-decoration:none; border-radius:6px; font-weight:bold; transition: transform .2s ease, box-shadow .2s ease; }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,.15); }
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeIn 0.9s ease-out;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background: #994646;
+      color: #fff;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
 
     /* ===================== */
     /*        SECTIONS       */
     /* ===================== */
-    section { padding:60px 20px; max-width:1100px; margin:auto; animation: fadeUp .7s ease both; }
-    h2 { font-size:36px; margin-bottom:20px; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:24px; }
-    .card { background:#f9fafb; padding:24px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.05); transition: transform .2s ease; }
-    .card:hover { transform: translateY(-4px); }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #f9fafb;
+      padding: 24px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
 
     /* ===================== */
     /*        FOOTER         */
     /* ===================== */
-    footer { background:#0f172a; color:#fff; text-align:center; padding:30px 20px; }
-    footer p { margin:6px 0; }
+    footer {
+      background: #0f172a;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
 
     /* ===================== */
     /*        NAVIGATION     */
     /* ===================== */
-    nav a { opacity:.9; }
-    nav a:hover { opacity:1; }
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: #020617;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      flex-wrap: wrap;
+      transition: box-shadow 0.3s;
+    }
+
+    .navbar.scrolled {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo { height: 42px; width: auto; }
+
+    .brand-name { font-size: 20px; }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 0.8; }
+
+    .nav-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 64px;
+        right: 0;
+        background: #020617;
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        padding: 12px 0;
+      }
+
+      .nav-links a {
+        padding: 12px 20px;
+        border-top: 1px solid #333;
+      }
+
+      .nav-toggle { display: block; }
+    }
+
+    .nav-links.active { display: flex; }
 
     /* ===================== */
     /*        FORMS          */
     /* ===================== */
-    form { max-width:520px; margin-top:20px; }
-    input, textarea { width:100%; padding:12px; margin:10px 0; border-radius:6px; border:1px solid #cbd5e1; }
-    button { background:#0ea5e9; color:#fff; padding:12px 20px; border:none; border-radius:6px; font-weight:bold; cursor:pointer; }
-    button:hover { background:#0284c7; }
+    form {
+      max-width: 520px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+    }
+
+    button {
+      background: #0ea5e9;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover { background: #0284c7; }
 
     /* ===================== */
     /*        ANIMATIONS     */
     /* ===================== */
     @keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
-    @keyframes fadeUp { from { opacity:0; transform: translateY(12px) } to { opacity:1; transform: translateY(0) } }
+    @keyframes fadeUp { from { opacity:0; transform: translateY(12px); } to { opacity:1; transform: translateY(0); } }
 
-    /* ===================== */
-    /*       MEDIA QUERIES   */
-    /* ===================== */
     @media (max-width: 640px) {
-      header h1 { font-size:34px; }
-      header p { font-size:18px; }
-      nav { padding:12px 16px; flex-direction:column; align-items:flex-start; gap:10px; }
-      nav div:last-child { gap:14px; }
+      header h1 { font-size: 34px; }
+      header p { font-size: 18px; }
     }
   </style>
 </head>
 <body>
 
 <!-- NAVBAR -->
-<nav style="position:fixed;top:0;width:100%;background:#020617;color:#fff;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;z-index:1000;">
-  <div style="display:flex;align-items:center;gap:12px;">
-    <img src="Logo de AkinTechnologies sur fond bleu.png" alt="AkinTechnologies Logo" style="height:42px;width:auto;" />
-    <strong style="font-size:20px;">AkinTechnologies</strong>
+<nav class="navbar">
+  <div class="nav-left">
+    <img src="Logo de AkinTechnologies sur fond bleu.png" alt="AkinTechnologies Logo" class="logo" />
+    <strong class="brand-name">AkinTechnologies</strong>
   </div>
-  <div style="display:flex;gap:24px;">
-    <a href="#about" style="color:#fff;text-decoration:none;">About</a>
-    <a href="#services" style="color:#fff;text-decoration:none;">Services</a>
-    <a href="#portfolio" style="color:#fff;text-decoration:none;">Projects</a>
-    <a href="#contact" style="color:#fff;text-decoration:none;">Contact</a>
+
+  <div class="nav-toggle" id="nav-toggle">&#9776;</div>
+
+  <div class="nav-links" id="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Projects</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
-<div style="height:80px;"></div>
 
 <!-- HEADER -->
 <header>
@@ -165,6 +316,25 @@
   <p>&copy; 2025 AkinTechnologies</p>
   <p>Cloud • DevOps • Security • Automation</p>
 </footer>
+
+<!-- NAVBAR TOGGLE & SCROLL SHADOW SCRIPT -->
+<script>
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const navbar = document.querySelector('.navbar');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
 
 </body>
 </html>
