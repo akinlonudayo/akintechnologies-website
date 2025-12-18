@@ -224,22 +224,92 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-left">
-    <img src="Logo de AkinTechnologies sur fond bleu.png" alt="AkinTechnologies Logo" class="logo" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AkinTechnologies</title>
+</head>
+<body style="margin:0; padding:0; font-family:Arial,sans-serif; overflow-x:hidden;">
+
+  <!-- Polished Responsive Navbar -->
+  <nav style="position:fixed; top:0; width:100%; background:#020617; color:#fff; padding:16px 0; z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.2);">
+    <div style="max-width:1200px; width:90%; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+
+      <h1 style="margin:0; font-size:1.5rem;">My Website</h1>
+
+      <div id="hamburger" style="display:none; flex-direction:column; cursor:pointer; width:25px; height:20px; justify-content:space-between;">
+        <span style="height:3px; width:100%; background:white; transition:0.3s;"></span>
+        <span style="height:3px; width:100%; background:white; transition:0.3s;"></span>
+        <span style="height:3px; width:100%; background:white; transition:0.3s;"></span>
+      </div>
+
+      <div id="nav-links" style="display:flex; gap:15px; transition:max-height 0.3s ease; overflow:hidden;">
+        <a href="#home" style="color:#fff; text-decoration:none;">Home</a>
+        <a href="#about" style="color:#fff; text-decoration:none;">About</a>
+        <a href="#services" style="color:#fff; text-decoration:none;">Services</a>
+        <a href="#contact" style="color:#fff; text-decoration:none;">Contact</a>
+        <a href="#faq" style="color:#fff; text-decoration:none;">FAQ</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div style="margin-top:80px; max-width:1200px; width:90%; margin-left:auto; margin-right:auto;">
+    <h2>Welcome!</h2>
+    <p>All your content now fits perfectly on any screen without horizontal scrolling.</p>
+    <img src="Logo de AkinTechnologies sur fond bleu.png" alt="AkinTechnologies Logo" class="logo" style="width:100%; height:auto;">
     <strong class="brand-name">AkinTechnologies</strong>
   </div>
 
-  <div class="nav-toggle" id="nav-toggle">&#9776;</div>
+  <!-- Hamburger Menu Script -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    let menuOpen = false;
 
-  <div class="nav-links" id="nav-links">
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+    function toggleNav() {
+      menuOpen = !menuOpen;
+      if (menuOpen) {
+        navLinks.style.maxHeight = navLinks.scrollHeight + "px";
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.gap = '10px';
+        const spans = hamburger.querySelectorAll('span');
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        navLinks.style.maxHeight = '0px';
+        const spans = hamburger.querySelectorAll('span');
+        spans[0].style.transform = 'rotate(0) translate(0,0)';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'rotate(0) translate(0,0)';
+      }
+    }
+
+    function checkScreen() {
+      if (window.innerWidth <= 768) {
+        hamburger.style.display = 'flex';
+        navLinks.style.maxHeight = '0px';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.gap = '10px';
+      } else {
+        hamburger.style.display = 'none';
+        navLinks.style.maxHeight = 'none';
+        navLinks.style.flexDirection = 'row';
+        navLinks.style.gap = '15px';
+      }
+    }
+
+    hamburger.addEventListener('click', toggleNav);
+    window.addEventListener('resize', checkScreen);
+    window.addEventListener('load', checkScreen);
+  </script>
+
+</body>
+</html>
 
 <!-- HEADER -->
 <header>
@@ -337,14 +407,17 @@
 <!-- NAVBAR TOGGLE & SCROLL SHADOW SCRIPT -->
 <script>
   const navToggle = document.getElementById('nav-toggle');
-  const navLinks = document.getElementById('nav-links');
+  const navLinksEl = document.getElementById('nav-links');
   const navbar = document.querySelector('.navbar');
 
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
+  if (navToggle && navLinksEl) {
+    navToggle.addEventListener('click', () => {
+      navLinksEl.classList.toggle('active');
+    });
+  }
 
   window.addEventListener('scroll', () => {
+    if (!navbar) return;
     if (window.scrollY > 10) {
       navbar.classList.add('scrolled');
     } else {
