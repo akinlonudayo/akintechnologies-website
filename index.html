@@ -26,7 +26,7 @@
       padding: 8px 0;
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      
+
     }
 
     .nav-container {
@@ -281,19 +281,87 @@
 <section id="contact">
   <h2>Contact Us</h2>
   <p class="tagline">We will respond within 24 hours.</p>
-  <form>
+
+  <!-- Added id="contactForm" -->
+  <form id="contactForm">
     <div>
-      <input type="text" name="name" placeholder="Your Name" required style="width:50%;padding:12px;border:1px solid #e5e7eb;border-radius:8px;font-size:16px;" />
-      <input type="email" name="email" placeholder="Your Email" required style="width:50%;padding:12px;border:1px solid #e5e7eb;border-radius:8px;font-size:16px;" />
-      <textarea name="message" rows="4" placeholder="Briefly describe your business needs" required style="width:50%;padding:12px;border:1px solid #e5e7eb;border-radius:8px;font-size:16px;resize:vertical;"></textarea>
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        style="width:50%;padding:12px;border:1px solid #e5e7eb;border-radius:8px;font-size:16px;"
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        style="width:50%;padding:12px;border:1px solid #e5e7eb;border-radius:8px;font-size:16px;"
+      />
+
+      <textarea
+        name="message"
+        rows="4"
+        placeholder="Briefly describe your business needs"
+        required
+        style="width:50%;padding:12px;border:1px solid #e5e7eb;border-radius:8px;font-size:16px;resize:vertical;"
+      ></textarea>
+
       <div style="width:50%;margin-top:12px;">
-        <button type="submit" style="background:#994646;color:#fff;padding:12px;border-radius:8px;border:none;font-weight:600;cursor:pointer;width:50%;">Send Message</button>
-      </div></div>
+        <button
+          type="submit"
+          style="background:#994646;color:#fff;padding:12px;border-radius:8px;border:none;font-weight:600;cursor:pointer;width:50%;"
+        >
+          Send Message
+        </button>
+      </div>
     </div>
   </form>
-  <p style="margin-top:16px;"><strong>Email:</strong> info@akintechnologies.com</p>
+
+  <!-- Added status message -->
+  <p id="formStatus" style="margin-top:12px;font-weight:500;"></p>
+
+  <p style="margin-top:16px;"><strong>Email:</strong> akinlonudayo@gmail.com</p>
   <p><strong>Location:</strong> Canada</p>
 </section>
+
+<script>
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message")
+    };
+
+    status.textContent = "Sending...";
+
+    try {
+      await fetch("https://8vj6dojs5d.execute-api.ca-central-1.amazonaws.com/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      status.textContent = "Message sent successfully!";
+      form.reset();
+    } catch (error) {
+      status.textContent = "Error sending message. Please try again.";
+      console.error(error);
+    }
+  });
+</script>
+
 
 
 
