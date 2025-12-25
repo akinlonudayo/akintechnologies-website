@@ -60,12 +60,24 @@
     /* ================= NAVBAR ================= */
     .navbar {
       width: 100%;
+      height: 60px;              /* Fixed navbar height */
       background: white;
       position: sticky;
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      display: flex;             /* Align logo and menu in a row */
+      align-items: center;       /* Vertically center content */
+      padding: 0 20px;           /* Optional spacing */
+      box-sizing: border-box;    /* Ensure padding doesn't increase height */
     }
+
+    /* Logo control */
+    .navbar img.logo {
+      height: 40px;             /* Set desired logo height */
+      width: auto;              /* Maintain aspect ratio */
+    }
+
 
     .nav-container {
       max-width: 1200px;
