@@ -192,68 +192,60 @@
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">
-        <img src="Logo de AkinTechnologies sur fond bleu.png" alt="AkinTech Solutions Logo" />
-      </div>
-
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#why-us">Why Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <a href="#contact" class="nav-cta">Get Started</a>
-        </li>
-      </ul>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="Logo de AkinTechnologies sur fond bleu.png" alt="AkinTech Solutions Logo" />
     </div>
-  </nav>
 
+    <!-- Hamburger -->
+    <div id="hamburger" style="display:none; flex-direction: column; gap: 5px; cursor: pointer;">
+      <span style="display:block;width:25px;height:3px;background:#111827;border-radius:2px;"></span>
+      <span style="display:block;width:25px;height:3px;background:#111827;border-radius:2px;"></span>
+      <span style="display:block;width:25px;height:3px;background:#111827;border-radius:2px;"></span>
+    </div>
 
-  <!-- Hamburger Menu Script -->
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    let menuOpen = false;
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Get Started</a></li>
+    </ul>
+  </div>
+</nav>
 
-    function toggleNav() {
-      menuOpen = !menuOpen;
-      if (menuOpen) {
-        navLinks.style.maxHeight = navLinks.scrollHeight + "px";
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.gap = '10px';
-        const spans = hamburger.querySelectorAll('span');
-        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-      } else {
-        navLinks.style.maxHeight = '0px';
-        const spans = hamburger.querySelectorAll('span');
-        spans[0].style.transform = 'rotate(0) translate(0,0)';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'rotate(0) translate(0,0)';
-      }
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  function toggleNav() {
+    if (navLinks.style.display === 'flex') {
+      navLinks.style.display = 'none';
+    } else {
+      navLinks.style.display = 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.gap = '12px';
     }
+  }
 
-    function checkScreen() {
-      if (window.innerWidth <= 768) {
-        hamburger.style.display = 'flex';
-        navLinks.style.maxHeight = '0px';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.gap = '10px';
-      } else {
-        hamburger.style.display = 'none';
-        navLinks.style.maxHeight = 'none';
-        navLinks.style.flexDirection = 'row';
-        navLinks.style.gap = '15px';
-      }
+  function checkScreen() {
+    if (window.innerWidth <= 768) {
+      hamburger.style.display = 'flex';
+      navLinks.style.display = 'none';
+    } else {
+      hamburger.style.display = 'none';
+      navLinks.style.display = 'flex';
+      navLinks.style.flexDirection = 'row';
+      navLinks.style.gap = '28px';
     }
+  }
 
-    hamburger.addEventListener('click', toggleNav);
-    window.addEventListener('resize', checkScreen);
-    window.addEventListener('load', checkScreen);
-  </script>
+  hamburger.addEventListener('click', toggleNav);
+  window.addEventListener('resize', checkScreen);
+  window.addEventListener('load', checkScreen);
+</script>
+
 
 </body>
 </html>
@@ -436,28 +428,6 @@
   <p>&copy; 2025 AkinTechnologies</p>
   <p>Cloud • DevOps • Web Development</p>
 </footer>
-
-<!-- NAVBAR TOGGLE & SCROLL SHADOW SCRIPT -->
-<script>
-  const navToggle = document.getElementById('nav-toggle');
-  const navLinksEl = document.getElementById('nav-links');
-  const navbar = document.querySelector('.navbar');
-
-  if (navToggle && navLinksEl) {
-    navToggle.addEventListener('click', () => {
-      navLinksEl.classList.toggle('active');
-    });
-  }
-
-  window.addEventListener('scroll', () => {
-    if (!navbar) return;
-    if (window.scrollY > 10) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-</script>
 
 </body>
 </html>
