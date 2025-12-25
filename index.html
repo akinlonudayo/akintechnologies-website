@@ -60,57 +60,67 @@
     /* ================= NAVBAR ================= */
     .navbar {
       width: 100%;
-      height: 60px;              /* Fixed navbar height */
+      height: 60px;                     /* Fixed height */
       background: white;
       position: sticky;
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-      display: flex;             /* Align logo and menu in a row */
-      align-items: center;       /* Vertically center content */
-      padding: 0 20px;           /* Optional spacing */
-      box-sizing: border-box;    /* Ensure padding doesn't increase height */
-    }
-
-    /* Logo control */
-    .navbar img.logo {
-      height: 40px;             /* Set desired logo height */
-      width: auto;              /* Maintain aspect ratio */
-    }
-
-        .navbar {
       display: flex;
-      align-items: center;
-      justify-content: space-between; /* Logo left, menu right */
-      height: 60px;
-      background: white;
+      align-items: center;               /* Vertically center content */
+      justify-content: space-between;    /* Logo left, menu right */
       padding: 0 20px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
       box-sizing: border-box;
     }
 
-    .navbar ul {
+    /* Logo */
+    .navbar .logo img {
+      height: 50px;                     /* Logo height independent of navbar */
+      width: auto;                       /* Maintain aspect ratio */
+    }
+
+    /* Navigation menu */
+    .nav-links {
       display: flex;
-      gap: 20px;
+      align-items: center;
+      gap: 28px;
       list-style: none;
       margin: 0;
       padding: 0;
     }
 
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    /* Menu links */
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #111827;
+      transition: color 0.2s ease;
     }
 
-    .logo img {
-      height: 150px;
-      width: auto;
+    .nav-links a:hover {
+      color: #994646;
     }
+
+    /* CTA Button */
+    .nav-cta {
+      background: #994646;
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .nav-links {
+        gap: 16px;
+      }
+
+      .navbar .logo img {
+        height: 36px;
+      }
+    }
+
 
     /* Navigation Links */
     .nav-links {
