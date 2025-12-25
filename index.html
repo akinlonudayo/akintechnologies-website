@@ -23,23 +23,6 @@
       overflow-x: hidden;
     }
 
-    /* ---------- Why Us Section ---------- */
-    #why-us ul {
-      list-style: none;
-      max-width: 700px;
-      margin: 30px auto 0;
-      padding: 0;
-    }
-
-    #why-us li {
-      background: #f9fafb;
-      margin-bottom: 12px;
-      padding: 16px 20px;
-      border-radius: 10px;
-      font-weight: 500;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-    }
-
     /* ================= NAVBAR ================= */
     nav {
       position: fixed;
@@ -161,20 +144,23 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav>
+  <nav class="navbar">
     <div class="nav-container">
-      <div class="brand">
-        <img src="Logo de AkinTechnologies sur fond bleu.png" alt="AkinTechnologies Logo" style="height:120px; width:auto;">
+      <div class="logo">
+        <img src="Logo de AkinTechnologies sur fond bleu.png" alt="AkinTech Solutions Logo" />
       </div>
 
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="#contact" class="nav-cta">Get Started</a>
+        </li>
+      </ul>
     </div>
   </nav>
+
 
   <!-- Hamburger Menu Script -->
   <script>
