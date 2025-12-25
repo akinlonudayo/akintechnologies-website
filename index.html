@@ -24,54 +24,69 @@
     }
 
     /* ================= NAVBAR ================= */
-    nav {
-      position: fixed;
-      top: 0;
+    .navbar {
       width: 100%;
-      background: #020617;
-      padding: 8px 0;
+      background: white;
+      position: sticky;
+      top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
     }
 
     .nav-container {
       max-width: 1200px;
-      width: 90%;
-      margin: auto;
+      margin: 0 auto;
+      padding: 14px 20px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #fff;
-      font-weight: 600;
-      font-size: 18px;
-    }
-
-    .brand img {
-      height: 32px;
+    .logo img {
+      height: 44px;
       width: auto;
     }
 
+    /* Navigation Links */
     .nav-links {
+      list-style: none;
       display: flex;
-      gap: 20px;
+      align-items: center;
+      gap: 28px;
+      margin: 0;
     }
 
     .nav-links a {
-      color: #fff;
       text-decoration: none;
       font-weight: 500;
+      color: #111827;
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
-      opacity: 0.8;
+      color: #994646;
     }
+
+    /* CTA Button */
+    .nav-cta {
+      background: #994646;
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 768px) {
+      .nav-links {
+        gap: 16px;
+      }
+
+      .logo img {
+        height: 36px;
+      }
+    }
+
 
     /* ================= HEADER ================= */
     header {
@@ -144,20 +159,23 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav>
+  <nav class="navbar">
     <div class="nav-container">
-      <div class="brand">
-        <img src="Logo de AkinTechnologies sur fond bleu.png" alt="AkinTechSolutions Logo" style="height:120px; width:auto;">
+      <div class="logo">
+        <img src="Logo de AkinTechnologies sur fond bleu.png" alt="AkinTech Solutions Logo" />
       </div>
 
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="#contact" class="nav-cta">Get Started</a>
+        </li>
+      </ul>
     </div>
   </nav>
+
 
   <!-- Hamburger Menu Script -->
   <script>
