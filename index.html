@@ -23,6 +23,40 @@
       overflow-x: hidden;
     }
 
+        /* ================= HERO ================= */
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 120px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+
+    .tagline {
+      font-size: 20px;
+      color: #e5e7eb;
+      margin-bottom: 16px;
+    }
+
+    .subtagline {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+      color: #cbd5f5;
+    }
+
+    .btn {
+      background: #994646;
+      color: #fff;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
     /* ================= NAVBAR ================= */
     .navbar {
       width: 100%;
@@ -47,6 +81,7 @@
       width: auto;
     }
 
+    /* Navigation Links */
     .nav-links {
       list-style: none;
       display: flex;
@@ -66,6 +101,7 @@
       color: #994646;
     }
 
+    /* CTA Button */
     .nav-cta {
       background: #994646;
       color: white !important;
@@ -74,16 +110,19 @@
       font-weight: 600;
     }
 
+    /* ---------- Mobile ---------- */
     @media (max-width: 768px) {
       .nav-links {
         gap: 16px;
       }
+
       .logo img {
         height: 36px;
       }
     }
 
-    /* ================= HERO ================= */
+
+    /* ================= HEADER ================= */
     header {
       background: #0f172a;
       color: #fff;
@@ -96,17 +135,9 @@
       margin-bottom: 10px;
     }
 
-    .tagline {
+    header p {
       font-size: 20px;
-      color: #e5e7eb;
-      margin-bottom: 16px;
-    }
-
-    .subtagline {
-      max-width: 760px;
-      margin: 0 auto 30px;
-      font-size: 18px;
-      color: #cbd5f5;
+      margin-bottom: 30px;
     }
 
     .btn {
@@ -114,10 +145,10 @@
       color: #fff;
       padding: 14px 28px;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 6px;
       font-weight: 600;
     }
-
+    
     /* ================= SECTIONS ================= */
     section {
       padding: 60px 20px;
@@ -128,6 +159,12 @@
     h2 {
       font-size: 36px;
       margin-bottom: 20px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: #943607;
+      margin-bottom: 30px;
     }
 
     .grid {
@@ -143,6 +180,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
+    /* ================= FOOTER ================= */
     footer {
       background: #0f172a;
       color: #fff;
@@ -160,153 +198,266 @@
       <div class="logo">
         <img src="Logo de AkinTechnologies sur fond bleu.png" alt="AkinTech Solutions Logo" />
       </div>
+
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#why-us">Why Us</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#contact" class="nav-cta">Get Started</a></li>
+        <li>
+          <a href="#contact" class="nav-cta">Get Started</a>
+        </li>
       </ul>
     </div>
   </nav>
 
-  <!-- HEADER -->
-  <header>
-    <h1>AkinTechSolutions</h1>
-    <p class="tagline">Professional Cloud & DevOps Services — AWS • Azure • Serverless</p>
-    <p class="subtagline">We work with businesses to innovate faster by designing secure, scalable cloud infrastructure with automation, governance, and cost efficiency.</p>
-    <a class="btn" href="#contact">Get a Free Consultation</a>
-  </header>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>Who We Are</h2>
-    <p class="tagline">
-      AkinTechSolutions is a cloud and DevOps organization collaborating with businesses to design, deploy, manage
-      and secure scalable infrastructure on AWS and Microsoft Azure. We focus on cost-control, governance, automation,
-      security, and reliability ensuring high performance so our clients can scale with confidence.
-    </p>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services">
-    <div style="display:flex;gap:24px;align-items:center;margin-bottom:40px;flex-wrap:wrap;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" style="height:50px;" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Azure" style="height:50px;" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Terraform_Logo.svg" height="50">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/GitLab_logo.svg" height="50">
-      <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" alt="Git" style="height:50px;" />
-      And much more:...
-    </div>
-
-    <h2>Our Services</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Cloud Architecture & Deployment</h3>
-        <p>Scalable solutions on AWS & Azure with high performance and governance.</p>
-      </div>
-      <div class="card">
-        <h3>DevOps & Automation</h3>
-        <p>CI/CD pipelines, Infrastructure as Code, and workflow automation.</p>
-      </div>
-      <div class="card">
-        <h3>Cloud Security & Compliance</h3>
-        <p>IAM, network design, and secure cloud best practices.</p>
-      </div>
-      <div class="card">
-        <h3>Migration & Optimization</h3>
-        <p>Smooth cloud migrations with cost and performance optimization.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY US -->
-  <section id="why-us">
-    <h2>Why Work With AkinTech Solutions</h2>
-    <ul>
-      <li>✔ Cloud expertise across AWS & Azure</li>
-      <li>✔ Secure & scalable serverless deployments</li>
-      <li>✔ Cost-optimized designs for long-term value</li>
-      <li>✔ Fast turnaround and responsive support</li>
-    </ul>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section id="portfolio">
-    <p class="tagline" style="max-width:800px;margin-bottom:40px;">
-      Our solutions are built using industry-leading cloud platforms including <strong>AWS</strong> and <strong>Microsoft Azure</strong>, following enterprise architecture and security best practices.
-    </p>
-    <h2>Featured Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>AWS Cloud Contact Center</h3>
-        <p>We deployed a contact center on AWS. The business benefits included improved customer engagement and reduced operational costs.</p>
-      </div>
-      <div class="card">
-        <h3>AWS Serverless Application</h3>
-        <p>We built a serverless application using AWS and reduced operational costs by 30% through efficient resource management.</p>
-      </div>
-      <div class="card">
-        <h3>Azure 3-Tier Banking Architecture</h3>
-        <p>We designed a 3-tier architecture on Azure for a banking client, improving scalability and security.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT (unchanged) -->
-  <section id="contact">
-    <h2>Let’s Build Your Cloud Solution</h2>
-    <p>Fill out the form or email us — we’ll respond within 24 hours.</p>
-
-    <form id="contactForm">
-      <div>
-        <input type="text" name="name" placeholder="Your Name" required style="width:50%;padding:12px;border:1px solid #e5e7eb;border-radius:8px;font-size:16px;" />
-        <input type="email" name="email" placeholder="Your Email" required style="width:50%;padding:12px;border:1px solid #e5e7eb;border-radius:8px;font-size:16px;" />
-        <textarea name="message" rows="4" placeholder="Briefly describe your business needs" required style="width:50%;padding:12px;border:1px solid #e5e7eb;border-radius:8px;font-size:16px;resize:vertical;"></textarea>
-        <div style="width:50%;margin-top:12px;">
-          <button type="submit" style="background:#994646;color:#fff;padding:12px;border-radius:8px;border:none;font-weight:600;cursor:pointer;width:50%;">Send Message</button>
-        </div>
-      </div>
-    </form>
-
-    <p id="formStatus" style="margin-top:12px;font-weight:500;"></p>
-
-    <p style="margin-top:16px;"><strong>Email:</strong> akinlonudayo@yahoo.com</p>
-    <p><strong>Location:</strong> Canada</p>
-  </section>
-
+  <!-- Hamburger Menu Script -->
   <script>
-    const form = document.getElementById("contactForm");
-    const status = document.getElementById("formStatus");
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    let menuOpen = false;
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
-      const payload = {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message")
-      };
-      status.textContent = "Sending...";
-      try {
-        await fetch("https://8vj6dojs5d.execute-api.ca-central-1.amazonaws.com/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-        status.textContent = "Message sent successfully!";
-        form.reset();
-      } catch (error) {
-        status.textContent = "Error sending message. Please try again.";
-        console.error(error);
+    function toggleNav() {
+      menuOpen = !menuOpen;
+      if (menuOpen) {
+        navLinks.style.maxHeight = navLinks.scrollHeight + "px";
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.gap = '10px';
+        const spans = hamburger.querySelectorAll('span');
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        navLinks.style.maxHeight = '0px';
+        const spans = hamburger.querySelectorAll('span');
+        spans[0].style.transform = 'rotate(0) translate(0,0)';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'rotate(0) translate(0,0)';
       }
-    });
+    }
+
+    function checkScreen() {
+      if (window.innerWidth <= 768) {
+        hamburger.style.display = 'flex';
+        navLinks.style.maxHeight = '0px';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.gap = '10px';
+      } else {
+        hamburger.style.display = 'none';
+        navLinks.style.maxHeight = 'none';
+        navLinks.style.flexDirection = 'row';
+        navLinks.style.gap = '15px';
+      }
+    }
+
+    hamburger.addEventListener('click', toggleNav);
+    window.addEventListener('resize', checkScreen);
+    window.addEventListener('load', checkScreen);
   </script>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 AkinTechnologies</p>
-    <p>Cloud • DevOps • Web Development</p>
-  </footer>
+</body>
+</html>
+
+<!-- HEADER -->
+<header>
+  <h1>AkinTechSolutions</h1>
+  <p class="tagline">Professional Cloud & DevOps Services — AWS • Azure • Serverless</p>
+  <p class="subtagline">We work with businesses to innovate faster by designing secure, scalable cloud infrastructure with automation, governance, and cost efficiency.</p>
+  <a class="btn" href="#contact">Get a Free Consultation</a>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>Who We Are</h2>
+  <p class="tagline">
+    AkinTechSolutions is a cloud and DevOps organization collaborating with businesses to design, deploy, manage
+    and secure scalable infrastructure on AWS and Microsoft Azure. We focus on cost-control, governance, automation,
+    security, and reliability ensuring high performance so our clients can scale with confidence.
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div style="display:flex;gap:24px;align-items:center;margin-bottom:40px;flex-wrap:wrap;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" style="height:50px;" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Azure" style="height:50px;" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Terraform_Logo.svg" height="50">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/GitLab_logo.svg" height="50">
+    <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" alt="Git" style="height:50px;" />
+    And much more:...
+  </div>
+
+  <h2>Our Services</h2>
+  <div class="service-cards">
+    <div class="service-card">
+      <h3>Cloud Architecture & Deployment</h3>
+      <p>Scalable solutions on AWS & Azure with high performance and governance.</p>
+    </div>
+    <div class="service-card">
+      <h3>DevOps & Automation</h3>
+      <p>CI/CD pipelines, Infrastructure as Code, and workflow automation.</p>
+    </div>
+    <div class="service-card">
+      <h3>Cloud Security & Compliance</h3>
+      <p>IAM, network design, and secure cloud best practices.</p>
+    </div>
+    <div class="service-card">
+      <h3>Migration & Optimization</h3>
+      <p>Smooth cloud migrations with cost and performance optimization.</p>
+    </div>
+  </div>
+</section>
+
+<section id="why-us">
+  <h2>Why Work With AkinTech Solutions</h2>
+  <ul>
+    <li>✔ Cloud expertise across AWS & Azure</li>
+    <li>✔ Secure & scalable serverless deployments</li>
+    <li>✔ Cost-optimized designs for long-term value</li>
+    <li>✔ Fast turnaround and responsive support</li>
+  </ul>
+</section>
+
+
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <p class="tagline" style="max-width:800px;margin-bottom:40px;">
+    Our solutions are built using industry-leading cloud platforms including <strong>AWS</strong> and <strong>Microsoft Azure</strong>, following enterprise architecture and security best practices.
+  </p>
+  <h2>Featured Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>AWS Cloud Contact Center</h3>
+      <p>We deployed a contact center on AWS. The business benefits included improved customer engagement and reduced operational costs.</p>
+    </div>
+    <div class="card">
+      <h3>AWS Serverless Application</h3>
+      <p>We built a serverless application using AWS and reduced operational costs by 30% through efficient resource management.</p>
+    </div>
+    <div class="card">
+      <h3>Azure 3-Tier Banking Architecture</h3>
+      <p>We designed a 3-tier architecture on Azure for a banking client, improving scalability and security.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Let’s Build Your Cloud Solution</h2>
+  <p>Fill out the form or email us — we’ll respond within 24 hours.</p>
+
+
+  <!-- Added id="contactForm" -->
+  <form id="contactForm">
+    <div>
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        style="width:50%;padding:12px;border:1px solid #e5e7eb;border-radius:8px;font-size:16px;"
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        style="width:50%;padding:12px;border:1px solid #e5e7eb;border-radius:8px;font-size:16px;"
+      />
+
+      <textarea
+        name="message"
+        rows="4"
+        placeholder="Briefly describe your business needs"
+        required
+        style="width:50%;padding:12px;border:1px solid #e5e7eb;border-radius:8px;font-size:16px;resize:vertical;"
+      ></textarea>
+
+      <div style="width:50%;margin-top:12px;">
+        <button
+          type="submit"
+          style="background:#994646;color:#fff;padding:12px;border-radius:8px;border:none;font-weight:600;cursor:pointer;width:50%;"
+        >
+          Send Message
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Added status message -->
+  <p id="formStatus" style="margin-top:12px;font-weight:500;"></p>
+
+  <p style="margin-top:16px;"><strong>Email:</strong> akinlonudayo@yahoo.com</p>
+  <p><strong>Location:</strong> Canada</p>
+</section>
+
+<script>
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message")
+    };
+
+    status.textContent = "Sending...";
+
+    try {
+      await fetch("https://8vj6dojs5d.execute-api.ca-central-1.amazonaws.com/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      status.textContent = "Message sent successfully!";
+      form.reset();
+    } catch (error) {
+      status.textContent = "Error sending message. Please try again.";
+      console.error(error);
+    }
+  });
+</script>
+
+
+
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 AkinTechnologies</p>
+  <p>Cloud • DevOps • Web Development</p>
+</footer>
+
+<!-- NAVBAR TOGGLE & SCROLL SHADOW SCRIPT -->
+<script>
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinksEl = document.getElementById('nav-links');
+  const navbar = document.querySelector('.navbar');
+
+  if (navToggle && navLinksEl) {
+    navToggle.addEventListener('click', () => {
+      navLinksEl.classList.toggle('active');
+    });
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!navbar) return;
+    if (window.scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
 
 </body>
 </html>
