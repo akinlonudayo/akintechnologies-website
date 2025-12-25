@@ -58,69 +58,45 @@
       font-weight: 600;
     }
     /* ================= NAVBAR ================= */
+  /* Navbar container */
     .navbar {
       width: 100%;
-      height: 60px;              /* Fixed navbar height */
+      height: 60px;                     /* Fixed height */
       background: white;
       position: sticky;
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-      display: flex;             /* Align logo and menu in a row */
-      align-items: center;       /* Vertically center content */
-      padding: 0 20px;           /* Optional spacing */
-      box-sizing: border-box;    /* Ensure padding doesn't increase height */
-    }
-
-    /* Logo control */
-    .navbar img.logo {
-      height: 40px;             /* Set desired logo height */
-      width: auto;              /* Maintain aspect ratio */
-    }
-
-        .navbar {
       display: flex;
-      align-items: center;
-      justify-content: space-between; /* Logo left, menu right */
-      height: 60px;
-      background: white;
+      align-items: center;               /* Vertically center */
+      justify-content: space-between;    /* Logo left, menu container right */
       padding: 0 20px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
       box-sizing: border-box;
     }
 
-    .navbar ul {
+    /* Logo */
+    .navbar .logo img {
+      height: 50px;                     /* Fixed logo height */
+      width: auto;                       /* Maintain aspect ratio */
+    }
+
+    /* Menu + Hamburger container */
+    .menu-container {
       display: flex;
-      gap: 20px;
+      align-items: center;
+      gap: 20px;                         /* Space between menu and hamburger */
+    }
+
+    /* Navigation menu */
+    .nav-links {
+      display: flex;
+      gap: 28px;
       list-style: none;
       margin: 0;
       padding: 0;
     }
 
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo img {
-      height: 150px;
-      width: auto;
-    }
-
-    /* Navigation Links */
-    .nav-links {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      margin: 0;
-    }
-
+    /* Menu links */
     .nav-links a {
       text-decoration: none;
       font-weight: 500;
@@ -141,21 +117,46 @@
       font-weight: 600;
     }
 
+    /* Hamburger */
+    #hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    #hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: #111827;
+      border-radius: 2px;
+    }
+
     /* ---------- Mobile ---------- */
     @media (max-width: 768px) {
       .nav-links {
-        gap: 16px;
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: white;
+        padding: 15px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        border-radius: 8px;
       }
 
-      .logo img {
-        height: 36px;
+      #hamburger {
+        display: flex;
       }
     }
 
 
-    /* ================= HEADER ================= */
-    header {
-      background: #0f172a;
+/* ================= HEADER ================= */
+header {
+  background: #0f172a;
       color: #fff;
       padding: 80px 20px;
       text-align: center;
@@ -224,27 +225,31 @@
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-container">
-    <div class="logo">
-      <img src="Logo de AkinTechnologies sur fond bleu.png" alt="AkinTech Solutions Logo" />
-    </div>
+    <nav class="navbar">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="Logo de AkinTechnologies sur fond bleu.png" alt="AkinTech Solutions Logo" />
+      </div>
 
-    <!-- Hamburger -->
-    <div id="hamburger" style="display:none; flex-direction: column; gap: 5px; cursor: pointer;">
-      <span style="display:block;width:25px;height:3px;background:#111827;border-radius:2px;"></span>
-      <span style="display:block;width:25px;height:3px;background:#111827;border-radius:2px;"></span>
-      <span style="display:block;width:25px;height:3px;background:#111827;border-radius:2px;"></span>
-    </div>
+      <!-- Menu + Hamburger container -->
+      <div class="menu-container">
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why-us">Why Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact" class="nav-cta">Get Started</a></li>
+        </ul>
 
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#why-us">Why Us</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#contact" class="nav-cta">Get Started</a></li>
-    </ul>
-  </div>
-</nav>
+        <!-- Hamburger for mobile -->
+        <div id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
 
 <script>
   const hamburger = document.getElementById('hamburger');
