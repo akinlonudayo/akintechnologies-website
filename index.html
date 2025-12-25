@@ -3,71 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <meta name="description" content="AkinTech Solutions provides secure, scalable cloud and DevOps services on AWS and Azure." />
+  <meta name="description" content="AkinTech Solutions provides secure, scalable cloud and DevOps services on AWS and Azure. Cloud architecture, automation, security, and optimization tailored to your business." />
   <meta property="og:title" content="AkinTech Solutions | Cloud & DevOps Services" />
-  <meta property="og:description" content="Professional cloud consulting and deployment services using AWS and Azure." />
-  <meta property="og:image" content="https://akintechsolutions.com/logo.png" />
+  <meta property="og:description" content="Professional cloud consulting and deployment services using AWS and Azure for scalable, secure business infrastructure." />
+  <meta property="og:image" content="https://akintechsolutions.com/path/to/your-logo.png" />
   <meta property="og:url" content="https://akintechsolutions.com" />
 
   <title>AkinTechSolutions | Simply the Best Cloud Solutions</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', Arial, sans-serif;
       color: #1f2937;
-      padding-top: 96px;
+      padding-top: 64px; /* space for fixed navbar */
       overflow-x: hidden;
     }
 
     /* ================= NAVBAR ================= */
     .navbar {
-      position: fixed;
-      top: 0;
       width: 100%;
       background: white;
+      position: sticky;
+      top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
     }
 
     .nav-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 18px 24px;
+      padding: 14px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .logo img {
-      height: 72px;
-      max-height: 80px;
+      height: 44px;
       width: auto;
-      object-fit: contain;
     }
 
+    /* Navigation Links */
     .nav-links {
       list-style: none;
       display: flex;
       align-items: center;
       gap: 28px;
       margin: 0;
-      padding: 0;
     }
 
     .nav-links a {
       text-decoration: none;
       font-weight: 500;
       color: #111827;
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
       color: #994646;
     }
 
+    /* CTA Button */
     .nav-cta {
       background: #994646;
       color: white !important;
@@ -76,36 +76,34 @@
       font-weight: 600;
     }
 
+    /* ---------- Mobile ---------- */
     @media (max-width: 768px) {
+      .nav-links {
+        gap: 16px;
+      }
+
       .logo img {
-        height: 65px;
+        height: 36px;
       }
     }
 
-    /* ================= HERO ================= */
+
+    /* ================= HEADER ================= */
     header {
       background: #0f172a;
-      color: white;
-      padding: 120px 20px;
+      color: #fff;
+      padding: 80px 20px;
       text-align: center;
     }
 
     header h1 {
       font-size: 48px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .tagline {
+    header p {
       font-size: 20px;
-      color: #e5e7eb;
-      margin-bottom: 16px;
-    }
-
-    .subtagline {
-      max-width: 760px;
-      margin: 0 auto 30px;
-      font-size: 18px;
-      color: #cbd5f5;
+      margin-bottom: 30px;
     }
 
     .btn {
@@ -113,101 +111,45 @@
       color: #fff;
       padding: 14px 28px;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 6px;
       font-weight: 600;
     }
-
+    
     /* ================= SECTIONS ================= */
     section {
-      padding: 80px 20px;
+      padding: 60px 20px;
       max-width: 1100px;
       margin: auto;
     }
 
     h2 {
       font-size: 36px;
-      margin-bottom: 24px;
-      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: #943607;
+      margin-bottom: 30px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 24px;
     }
 
     .card {
       background: #f9fafb;
-      padding: 28px;
-      border-radius: 14px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-    }
-
-    .service-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .service-card {
-      background: white;
-      padding: 28px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    }
-
-    #why-us ul {
-      max-width: 700px;
-      margin: 0 auto;
-      list-style: none;
-      padding: 0;
-    }
-
-    #why-us li {
-      background: #f9fafb;
-      padding: 16px 20px;
-      margin-bottom: 12px;
+      padding: 24px;
       border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
-    /* ================= CONTACT ================= */
-    #contact {
-      background: #f9fafb;
-      border-radius: 20px;
-    }
-
-    #contact form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    #contact input,
-    #contact textarea {
-      width: 100%;
-      max-width: 500px;
-      margin-bottom: 14px;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #e5e7eb;
-      font-size: 16px;
-    }
-
-    #contact button {
-      background: #994646;
-      color: white;
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      font-weight: 600;
-      width: 200px;
-      cursor: pointer;
-    }
-
+    /* ================= FOOTER ================= */
     footer {
       background: #0f172a;
-      color: white;
+      color: #fff;
       text-align: center;
       padding: 30px 20px;
     }
@@ -216,73 +158,154 @@
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-container">
-    <div class="logo">
-      <img src="Logo de AkinTechnologies sur fond bleu.png" alt="AkinTech Solutions Logo">
-    </div>
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#why-us">Why Us</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#contact" class="nav-cta">Get Started</a></li>
-    </ul>
-  </div>
-</nav>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="Logo de AkinTechnologies sur fond bleu.png" alt="AkinTech Solutions Logo" />
+      </div>
 
-<!-- HERO -->
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="#contact" class="nav-cta">Get Started</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- Hamburger Menu Script -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    let menuOpen = false;
+
+    function toggleNav() {
+      menuOpen = !menuOpen;
+      if (menuOpen) {
+        navLinks.style.maxHeight = navLinks.scrollHeight + "px";
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.gap = '10px';
+        const spans = hamburger.querySelectorAll('span');
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        navLinks.style.maxHeight = '0px';
+        const spans = hamburger.querySelectorAll('span');
+        spans[0].style.transform = 'rotate(0) translate(0,0)';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'rotate(0) translate(0,0)';
+      }
+    }
+
+    function checkScreen() {
+      if (window.innerWidth <= 768) {
+        hamburger.style.display = 'flex';
+        navLinks.style.maxHeight = '0px';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.gap = '10px';
+      } else {
+        hamburger.style.display = 'none';
+        navLinks.style.maxHeight = 'none';
+        navLinks.style.flexDirection = 'row';
+        navLinks.style.gap = '15px';
+      }
+    }
+
+    hamburger.addEventListener('click', toggleNav);
+    window.addEventListener('resize', checkScreen);
+    window.addEventListener('load', checkScreen);
+  </script>
+
+</body>
+</html>
+
+<!-- HEADER -->
 <header>
   <h1>AkinTechSolutions</h1>
   <p class="tagline">Professional Cloud & DevOps Services — AWS • Azure • Serverless</p>
-  <p class="subtagline">
-    We help businesses design secure, scalable cloud infrastructure with automation,
-    governance, and cost efficiency.
-  </p>
-  <a href="#contact" class="btn">Get a Free Consultation</a>
+  <p class="subtagline">We work with businesses to innovate faster by designing secure, scalable cloud infrastructure with automation, governance, and cost efficiency.</p>
+  <a class="btn" href="#contact">Get a Free Consultation</a>
 </header>
 
 <!-- ABOUT -->
 <section id="about">
   <h2>Who We Are</h2>
-  <p class="tagline" style="color:#4b5563;text-align:center;max-width:900px;margin:auto;">
-    AkinTechSolutions is a cloud and DevOps organization helping businesses deploy,
-    manage, and secure infrastructure on AWS and Microsoft Azure.
+  <p class="tagline">
+    AkinTechSolutions is a cloud and DevOps organization collaborating with businesses to design, deploy, manage
+    and secure scalable infrastructure on AWS and Microsoft Azure. We focus on cost-control, governance, automation,
+    security, and reliability ensuring high performance so our clients can scale with confidence.
   </p>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
+  <div style="display:flex;gap:24px;align-items:center;margin-bottom:40px;flex-wrap:wrap;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" style="height:50px;" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Azure" style="height:50px;" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Terraform_Logo.svg" height="50">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/GitLab_logo.svg" height="50">
+    <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" alt="Git" style="height:50px;" />
+    And much more:...
+  </div>
+
   <h2>Our Services</h2>
   <div class="service-cards">
     <div class="service-card">
       <h3>Cloud Architecture & Deployment</h3>
-      <p>Secure, scalable AWS & Azure cloud designs.</p>
+      <p>Scalable solutions on AWS & Azure with high performance and governance.</p>
     </div>
     <div class="service-card">
       <h3>DevOps & Automation</h3>
-      <p>CI/CD pipelines and Infrastructure as Code.</p>
+      <p>CI/CD pipelines, Infrastructure as Code, and workflow automation.</p>
     </div>
     <div class="service-card">
-      <h3>Cloud Security</h3>
-      <p>IAM, network security, and best practices.</p>
+      <h3>Cloud Security & Compliance</h3>
+      <p>IAM, network design, and secure cloud best practices.</p>
     </div>
     <div class="service-card">
       <h3>Migration & Optimization</h3>
-      <p>Cost-efficient cloud migrations.</p>
+      <p>Smooth cloud migrations with cost and performance optimization.</p>
     </div>
   </div>
 </section>
 
-<!-- WHY US -->
 <section id="why-us">
-  <h2>Why Work With Us</h2>
+  <h2>Why Work With AkinTech Solutions</h2>
   <ul>
-    <li>✔ AWS & Azure expertise</li>
-    <li>✔ Secure & scalable solutions</li>
-    <li>✔ Cost optimization focus</li>
-    <li>✔ Fast, responsive delivery</li>
+    <li>✔ Cloud expertise across AWS & Azure</li>
+    <li>✔ Secure & scalable serverless deployments</li>
+    <li>✔ Cost-optimized designs for long-term value</li>
+    <li>✔ Fast turnaround and responsive support</li>
   </ul>
+</section>
+
+
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <p class="tagline" style="max-width:800px;margin-bottom:40px;">
+    Our solutions are built using industry-leading cloud platforms including <strong>AWS</strong> and <strong>Microsoft Azure</strong>, following enterprise architecture and security best practices.
+  </p>
+  <h2>Featured Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>AWS Cloud Contact Center</h3>
+      <p>We deployed a contact center on AWS. The business benefits included improved customer engagement and reduced operational costs.</p>
+    </div>
+    <div class="card">
+      <h3>AWS Serverless Application</h3>
+      <p>We built a serverless application using AWS and reduced operational costs by 30% through efficient resource management.</p>
+    </div>
+    <div class="card">
+      <h3>Azure 3-Tier Banking Architecture</h3>
+      <p>We designed a 3-tier architecture on Azure for a banking client, improving scalability and security.</p>
+    </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
@@ -370,6 +393,8 @@
     }
   });
 </script>
+
+
 
 
 <!-- FOOTER -->
