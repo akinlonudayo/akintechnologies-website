@@ -288,12 +288,42 @@
 <!-- CONTACT -->
 <section id="contact">
   <h2>Let’s Build Your Cloud Solution</h2>
+  <p>Fill out the form or email us — we’ll respond within 24 hours.</p>
+
+
+  <!-- Added id="contactForm" -->
   <form id="contactForm">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" rows="4" placeholder="Describe your needs" required></textarea>
-    <button type="submit">Send Message</button>
-  Send Message
+    <div>
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        style="width:50%;padding:12px;border:1px solid #e5e7eb;border-radius:8px;font-size:16px;"
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        style="width:50%;padding:12px;border:1px solid #e5e7eb;border-radius:8px;font-size:16px;"
+      />
+
+      <textarea
+        name="message"
+        rows="4"
+        placeholder="Briefly describe your business needs"
+        required
+        style="width:50%;padding:12px;border:1px solid #e5e7eb;border-radius:8px;font-size:16px;resize:vertical;"
+      ></textarea>
+
+      <div style="width:50%;margin-top:12px;">
+        <button
+          type="submit"
+          style="background:#994646;color:#fff;padding:12px;border-radius:8px;border:none;font-weight:600;cursor:pointer;width:50%;"
+        >
+          Send Message
         </button>
       </div>
     </div>
@@ -306,32 +336,41 @@
   <p><strong>Location:</strong> Canada</p>
 </section>
 
-<!-- CONTACT SCRIPT -->
 <script>
   const form = document.getElementById("contactForm");
   const status = document.getElementById("formStatus");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message")
+    };
+
     status.textContent = "Sending...";
 
     try {
       await fetch("https://8vj6dojs5d.execute-api.ca-central-1.amazonaws.com/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name.value,
-          email: form.email.value,
-          message: form.message.value
-        })
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
       });
+
       status.textContent = "Message sent successfully!";
       form.reset();
-    } catch {
-      status.textContent = "Error sending message.";
+    } catch (error) {
+      status.textContent = "Error sending message. Please try again.";
+      console.error(error);
     }
   });
 </script>
+
 
 <footer>
   <p>&copy; 2025 AkinTechSolutions</p>
