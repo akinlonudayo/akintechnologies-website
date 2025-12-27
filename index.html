@@ -456,10 +456,9 @@ header {
 
       status.textContent = "Message sent successfully!";
       form.reset();
-
     } catch (error) {
-      status.textContent = "Error sending message. Please try again.";
-      console.error(error);
+      console.error("Error submitting form:", error);
+      status.textContent = "An error occurred. Please try again.";
     }
   });
 </script>
