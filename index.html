@@ -441,6 +441,7 @@ header {
     try {
       const response = await fetch("https://8vj6dojs5d.execute-api.ca-central-1.amazonaws.com/prod/contact", {
         method: "POST",
+        mode: "cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
       });
