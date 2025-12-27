@@ -444,11 +444,14 @@ header {
     status.textContent = "Sending...";
 
     try {
-      await fetch("https://8vj6dojs5d.execute-api.ca-central-1.amazonaws.com/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
+      const response = await fetch(
+        "https://8vj6dojs5d.execute-api.ca-central-1.amazonaws.com/contact",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Request failed");
@@ -462,6 +465,7 @@ header {
     }
   });
 </script>
+
 
 
 
