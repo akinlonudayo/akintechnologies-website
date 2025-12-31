@@ -1,3 +1,118 @@
+<style>
+  /* ================= MODERN SERVICE PAGE ================= */
+
+  .service-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 90px 24px;
+  }
+
+  .service-hero {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #ffffff;
+    padding: 110px 30px;
+    border-radius: 22px;
+    text-align: center;
+    margin-bottom: 90px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at top right,
+      rgba(255,255,255,0.08),
+      transparent 60%
+    );
+  }
+
+  .service-hero h1 {
+    font-size: clamp(38px, 5vw, 52px);
+    margin-bottom: 22px;
+  }
+
+  .service-hero p {
+    font-size: 19px;
+    max-width: 820px;
+    margin: 0 auto 38px;
+    color: #e5e7eb;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, #994646, #b45353);
+    color: #ffffff;
+    padding: 16px 38px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 12px 28px rgba(153,70,70,0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 38px rgba(153,70,70,0.55);
+  }
+
+  .service-section {
+    background: #ffffff;
+    padding: 52px;
+    border-radius: 20px;
+    margin-bottom: 44px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+
+  .service-section h2 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .service-section p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #374151;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 26px;
+    margin-top: 34px;
+  }
+
+  .feature {
+    background: #f8fafc;
+    padding: 26px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    font-weight: 500;
+  }
+
+  .service-cta {
+    background: linear-gradient(135deg, #994646, #7f3b3b);
+    color: #ffffff;
+    padding: 70px 40px;
+    border-radius: 22px;
+    text-align: center;
+    margin-top: 90px;
+  }
+
+  .service-cta h2 {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+
+  .service-cta p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #f3f4f6;
+  }
+</style>
+
 <title>Cloud Security & Compliance Services | AkinTechSolutions</title>
 
 <meta
@@ -15,7 +130,7 @@
     <a href="#contact" class="btn-primary">Request a Security Review</a>
   </header>
 
-  <section class="service-problem">
+  <section class="service-section">
     <h2>The Challenge</h2>
     <p>
       Misconfigured cloud resources are one of the leading causes of data breaches
@@ -34,20 +149,20 @@
 
   <section class="service-deliverables">
     <h2>What We Deliver</h2>
-    <ul>
-      <li>Identity and access management (IAM)</li>
-      <li>Secure networking and firewall configurations</li>
-      <li>Logging, monitoring, and alerting</li>
-      <li>Cloud security audits and best-practice reviews</li>
-    </ul>
+    <div class="feature-grid">
+      <div class="feature">Identity and access management (IAM)</div>
+      <div class="feature">Secure networking and firewall configurations</div>
+      <div class="feature">Logging, monitoring, and alerting</div>
+      <div class="feature">Cloud security audits and best-practice reviews</div>
+    </div>
   </section>
 
   <section class="service-outcomes">
     <h2>Business Outcomes</h2>
-    <ul>
-      <li>Reduced security vulnerabilities</li>
-      <li>Improved visibility and control</li>
-      <li>Compliance-ready cloud environments</li>
-    </ul>
+    <div class="feature-grid">
+      <div class="feature">Reduced security vulnerabilities</div>
+      <div class="feature">Improved visibility and control</div>
+      <div class="feature">Compliance-ready cloud environments</div>
+    </div>
   </section>
 </section>
