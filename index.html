@@ -133,6 +133,61 @@
       border-radius: 2px;
     }
 
+/* ================= SERVICE PAGES ================= */
+
+    .service-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .service-hero {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 80px 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .service-hero h1 {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+
+    .service-hero p {
+      font-size: 18px;
+      max-width: 760px;
+      margin: 0 auto 30px;
+      color: #cbd5f5;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: #994646;
+      color: #ffffff;
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background: #7f3b3b;
+    }
+
+    .service-page h2 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .service-page ul {
+      padding-left: 20px;
+    }
+
+    .service-page li {
+      margin-bottom: 10px;
+    }
     /* ---------- Mobile ---------- */
     @media (max-width: 768px) {
       #contact input,
@@ -294,9 +349,10 @@ header {
 <!-- HEADER -->
 <header>
   <h1>AkinTechSolutions</h1>
-  <p class="tagline">Professional Cloud & DevOps Services — AWS • Azure • Serverless</p>
-  <p class="subtagline">We work with businesses to innovate faster by designing secure, scalable cloud infrastructure with automation, governance, and cost efficiency.</p>
-  <a class="btn" href="#contact">Get a Free Consultation</a>
+  <p class="tagline">Cloud & DevOps Solutions That Reduce Cost, Improve Security, and Scale Your Business</p>
+  <p class="subtagline">We help startups and small to mid-sized businesses design, automate, and secure cloud infrastructure on AWS and Azure — without complexity or waste.</p>
+  <a class="btn" href="#contact">Book a Free Cloud Consultation</a>
+  <a class="btn" href="#portfolio">View Our Projects</a>
 </header>
 
 <!-- ABOUT -->
@@ -321,33 +377,54 @@ header {
   </div>
 
   <h2>Our Services</h2>
-  <div class="service-cards">
-    <div class="service-card">
-      <h3>Cloud Architecture & Deployment</h3>
-      <p>Scalable solutions on AWS & Azure with high performance and governance.</p>
-    </div>
-    <div class="service-card">
-      <h3>DevOps & Automation</h3>
-      <p>CI/CD pipelines, Infrastructure as Code, and workflow automation.</p>
-    </div>
-    <div class="service-card">
-      <h3>Cloud Security & Compliance</h3>
-      <p>IAM, network design, and secure cloud best practices.</p>
-    </div>
-    <div class="service-card">
-      <h3>Migration & Optimization</h3>
-      <p>Smooth cloud migrations with cost and performance optimization.</p>
-    </div>
-  </div>
+  <div class="service-card">
+  <h3>
+    <a href="cloud-architecture-migration.html">
+      Cloud Architecture & Deployment
+    </a>
+  </h3>
+  <p>Scalable solutions on AWS & Azure with high performance and governance.</p>
+</div>
+
+<div class="service-card">
+  <h3>
+    <a href="devops-automation.html">
+      DevOps & Automation
+    </a>
+  </h3>
+  <p>CI/CD pipelines, Infrastructure as Code, and workflow automation.</p>
+</div>
+
+<div class="service-card">
+  <h3>
+    <a href="cloud-security.html">
+      Cloud Security & Compliance
+    </a>
+  </h3>
+  <p>IAM, network design, and secure cloud best practices.</p>
+</div>
+
+<div class="service-card">
+  <h3>
+    <a href="cloud-cost-optimization.html">
+      Cloud Cost Optimization
+    </a>
+  </h3>
+  <p>Smooth cloud migrations with cost and performance optimization.</p>
+</div>
 </section>
 
 <section id="why-us">
   <h2>Why Work With AkinTech Solutions</h2>
   <ul>
+    <li>✔ Practical, business-focused cloud solutions</li>
     <li>✔ Cloud expertise across AWS & Azure</li>
+    <li>✔ Proven track record with startups and SMBs</li>
     <li>✔ Secure & scalable serverless deployments</li>
     <li>✔ Cost-optimized designs for long-term value</li>
     <li>✔ Fast turnaround and responsive support</li>
+  
+    <p>We don’t just deploy infrastructure — we build systems that support your business goals.</p>
   </ul>
 </section>
 
@@ -358,7 +435,7 @@ header {
   <p class="tagline" style="max-width:800px;margin-bottom:40px;">
     Our solutions are built using industry-leading cloud platforms including <strong>AWS</strong> and <strong>Microsoft Azure</strong>, following enterprise architecture and security best practices.
   </p>
-  <h2>Featured Projects</h2>
+  <h2>Recent Featured Projects</h2>
   <div class="grid">
     <div class="card">
       <h3>AWS Cloud Contact Center</h3>
@@ -377,8 +454,8 @@ header {
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2>Let’s Build Your Cloud Solution</h2>
-  <p>Fill out the form or email us — we’ll respond within 24 hours.</p>
+  <h2>Ready to Build a Better Cloud Environment?</h2>
+  <p>Let’s discuss your infrastructure, challenges, and goals — no obligation.</p>
 
 
   <!-- Added id="contactForm" -->
