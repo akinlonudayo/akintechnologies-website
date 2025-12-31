@@ -23,17 +23,25 @@
       overflow-x: hidden;
     }
 
-        /* ================= HERO ================= */
+    * {
+      box-sizing: border-box;
+    }
+
+      /* ================= HERO ================= */
+
     header {
       background: #0f172a;
       color: white;
       padding: 120px 20px;
       text-align: center;
+      overflow-x: hidden;
     }
 
     header h1 {
-      font-size: 48px;
+      font-size: clamp(32px, 7vw, 48px);
       margin-bottom: 12px;
+      padding: 0 12px;
+      word-break: break-word;
     }
 
     .tagline {
@@ -56,7 +64,37 @@
       text-decoration: none;
       border-radius: 8px;
       font-weight: 600;
+      display: inline-block;
     }
+
+    /* Hero buttons */
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    /* ================= MOBILE FIXES ================= */
+
+    @media (max-width: 480px) {
+      header {
+        padding: 80px 14px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .hero-buttons a {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+      }
+    }
+
     /* ================= NAVBAR ================= */
   /* Navbar container */
     .navbar {
@@ -117,46 +155,38 @@
       font-weight: 600;
     }
 
-    /* Hamburger */
-    #hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
+  /* Hamburger */
+  #hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
 
-    #hamburger span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      background: #111827;
-      border-radius: 2px;
-    }
+  #hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #111827;
+    border-radius: 2px;
+  }
 
-    /* ---------- Mobile ---------- */
-    @media (max-width: 768px) {
-      #contact input,
-      #contact textarea,
-      #contact button {
-        width: 100% !important;
-      }
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 12px;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background: white;
-        padding: 15px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-        border-radius: 8px;
-      }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
 
-      #hamburger {
-        display: flex;
-      }
-    }
+  #hamburger {
+    display: flex;
+  }
 
 
 /* ================= HEADER ================= */
@@ -168,8 +198,10 @@ header {
     }
 
     header h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
+      font-size: clamp(32px, 7vw, 48px);
+      margin-bottom: 12px;
+      padding: 0 12px;
+      word-break: break-word;
     }
 
     header p {
@@ -296,8 +328,10 @@ header {
   <h1>AkinTechSolutions</h1>
   <p class="tagline">Cloud & DevOps Solutions That Reduce Cost, Improve Security, and Scale Your Business</p>
   <p class="subtagline">We help startups and small to mid-sized businesses design, automate, and secure cloud infrastructure on AWS and Azure — without complexity or waste.</p>
-  <a class="btn" href="#contact">Book a Free Cloud Consultation</a>
-  <a class="btn" href="#portfolio">View Our Projects</a>
+<div class="hero-buttons">
+  <a class="btn-primary" href="#contact">Book a Free Cloud Consultation</a>
+  <a class="btn-secondary" href="#portfolio">View Our Projects</a>
+</div>
 </header>
 
 <!-- ABOUT -->
