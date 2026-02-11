@@ -1,0 +1,16 @@
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.*
+crash.log
+*.tfvars
+*.tfvars.json
+imported-state.txt
+
+# Sensitive files
+*.pem
+*.key
+*.crt
+
+# macOS junk
+.DS_Store
