@@ -2,13 +2,18 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 5.30.0"
+      version = "~> 5.0"
     }
   }
 }
 
 provider "aws" {
-  region = "ca-central-1" # CHANGE this to your bucket's region
+  region = "ca-central-1"
+}
+
+provider "aws" {
+  alias  = "us_east_1"
+  region = "us-east-1"
 }
 
 provider "aws" {
