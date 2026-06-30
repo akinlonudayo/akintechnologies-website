@@ -1,7 +1,7 @@
-# Project Name
+# AkinTechnologies Website
 
 ![Project Architecture](images/architecture.drawio.svg)
-# AkinTechnologies Website
+
 
 A production website hosted entirely on AWS, with all infrastructure provisioned as code using Terraform and deployments automated through GitHub Actions.
 
