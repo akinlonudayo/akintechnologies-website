@@ -9,34 +9,6 @@ A production website hosted entirely on AWS, with all infrastructure provisioned
 
 This project demonstrates an end-to-end cloud architecture for hosting and serving a static website with serverless backend capabilities. Every piece of infrastructure — from DNS to compute to messaging — is defined in version-controlled Terraform configuration, eliminating manual setup through the AWS Console.
 
-## Architecture
-
-```mermaid
-flowchart TD
-    User[User Browser] -->|HTTPS| R53[Route 53<br/>DNS]
-    R53 --> ACM[ACM<br/>SSL Certificate]
-    R53 --> CF[CloudFront<br/>CDN]
-    CF -->|Static Assets| S3[S3 Bucket<br/>Website Hosting]
-    CF -->|API Requests| APIGW[API Gateway]
-    APIGW --> Lambda[Lambda<br/>Backend Logic]
-    Lambda --> DDB[(DynamoDB<br/>Data Storage)]
-    Lambda --> SES[SES<br/>Email Delivery]
-    IAM[IAM Roles & Policies] -.->|Permissions| Lambda
-    IAM -.->|Permissions| APIGW
-    IAM -.->|Permissions| S3
-
-    GH[GitHub Actions<br/>CI/CD Pipeline] -->|terraform apply| TF[Terraform]
-    TF -->|Provisions| S3
-    TF -->|Provisions| CF
-    TF -->|Provisions| R53
-    TF -->|Provisions| ACM
-    TF -->|Provisions| APIGW
-    TF -->|Provisions| Lambda
-    TF -->|Provisions| DDB
-    TF -->|Provisions| SES
-    TF -->|Provisions| IAM
-```
-
 The site is built on the following AWS services, each provisioned through its own Terraform configuration:
 
 | Service | Purpose |
