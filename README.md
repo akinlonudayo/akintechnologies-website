@@ -124,4 +124,4 @@ Deployments are automated via **GitHub Actions** (`.github/workflows`) on every 
 
 **Oladayo Akinlonu**
 AWS Certified Solutions Architect – Associate
-[GitHub](https://github.com/akinlonudayo) · [LinkedIn](#)
+[GitHub](https://github.com/akinlonudayo) · [LinkedIn](www.linkedin.com/in/oladayoakinlonu)
