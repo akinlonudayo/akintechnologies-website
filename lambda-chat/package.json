@@ -1,0 +1,11 @@
+{
+  "name": "serverless-ai-chat-backend",
+  "version": "1.0.0",
+  "description": "Lambda backend for Serverless AI Chat App on AWS Bedrock",
+  "main": "index.js",
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.600.0",
+    "@aws-sdk/client-dynamodb": "^3.600.0",
+    "@aws-sdk/util-dynamodb": "^3.600.0"
+  }
+}
